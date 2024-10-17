@@ -31,7 +31,7 @@ public class AnnotatedBean {
   private int timeout;
   private int batch;
   @Value("${gjx:hello}")
-  public String gjx ;
+  private String gjx ;
   private List<JsonBean> jsonBeans;
 
   /**

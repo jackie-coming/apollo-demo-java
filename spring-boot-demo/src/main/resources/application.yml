@@ -23,3 +23,6 @@ apollo:
     namespaces: gjx10117
 
 listeners: "gjx10117"
+redis:
+  cache:
+    enabled: true
