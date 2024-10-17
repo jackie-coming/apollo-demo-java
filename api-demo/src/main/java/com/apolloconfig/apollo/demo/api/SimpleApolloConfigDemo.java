@@ -36,21 +36,21 @@ public class SimpleApolloConfigDemo {
 
   public SimpleApolloConfigDemo() {
     ConfigChangeListener changeListener = changeEvent -> {
-      logger.info("Changes for namespace {}", changeEvent.getNamespace());
+      System.out.println("Changes for namespace {}"+ changeEvent.getNamespace());
       for (String key : changeEvent.changedKeys()) {
         ConfigChange change = changeEvent.getChange(key);
-        logger.info("Change - key: {}, oldValue: {}, newValue: {}, changeType: {}",
-            change.getPropertyName(), change.getOldValue(), change.getNewValue(),
+        System.out.println("Change - key: {}, oldValue: {}, newValue: {}, changeType: {}"+
+            change.getPropertyName()+change.getOldValue()+change.getNewValue()+
             change.getChangeType());
       }
     };
-    config = ConfigService.getAppConfig();
+    config = ConfigService.getConfig("gjx10117");
     config.addChangeListener(changeListener);
   }
 
   private String getConfig(String key) {
     String result = config.getProperty(key, DEFAULT_VALUE);
-    logger.info(String.format("Loading key : %s with value: %s", key, result));
+    System.out.println(String.format("Loading key : %s with value: %s", key, result));
     return result;
   }
 
@@ -69,7 +69,8 @@ public class SimpleApolloConfigDemo {
       if (input.equalsIgnoreCase("quit")) {
         System.exit(0);
       }
-      apolloConfigDemo.getConfig(input);
+      System.out.print("> ");
+      System.out.println(apolloConfigDemo.getConfig(input));
     }
   }
 }

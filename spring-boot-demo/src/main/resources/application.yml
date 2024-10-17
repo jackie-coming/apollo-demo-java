@@ -14,12 +14,12 @@
 # limitations under the License.
 #
 apollo:
-  meta: http://81.68.181.139:8080
+  meta: http://localhost:8060
   bootstrap:
     enabled: true
     eagerLoad:
       enabled: true
     # will inject 'application' and 'TEST1.apollo' namespaces in bootstrap phase
-    namespaces: application,TEST1.apollo,application.yaml
+    namespaces: gjx10117
 
-listeners: "application,TEST1.apollo,application.yaml"
+listeners: "gjx10117"

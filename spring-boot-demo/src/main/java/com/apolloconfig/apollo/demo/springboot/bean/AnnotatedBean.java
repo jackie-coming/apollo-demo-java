@@ -30,6 +30,8 @@ public class AnnotatedBean {
 
   private int timeout;
   private int batch;
+  @Value("${gjx:hello}")
+  public String gjx ;
   private List<JsonBean> jsonBeans;
 
   /**
@@ -63,7 +65,7 @@ public class AnnotatedBean {
 
   @Override
   public String toString() {
-    return String.format("[AnnotatedBean] timeout: %d, batch: %d, jsonBeans: %s", timeout, batch,
+    return String.format("[AnnotatedBean] timeout: %d, batch: %d, gjx: %s,jsonBeans: %s", timeout, batch,gjx,
         jsonBeans);
   }
 
